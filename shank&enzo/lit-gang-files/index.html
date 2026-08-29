@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Lit Gang Files — the full Shank & Enzo story, declassified. A Ghostcode production." />
+  <link rel="icon" type="image/jpeg" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYnrZVT5U25P_e_FVFcdt1lUO_6IjaR3jn7tL6ER1sJg&s=10" />
+  <title>The Lit Gang Files — Ghostcode</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <div class="bg-ambience" aria-hidden="true">
+    <span class="glow glow-1"></span>
+    <span class="glow glow-2"></span>
+    <span class="glow glow-3"></span>
+    <span class="glow glow-4"></span>
+  </div>
+  <div class="bg-leak" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="embers" id="embers" aria-hidden="true"></div>
+  <div class="bg-vignette" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
+
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <span class="cursor-aura"></span>
+    <span class="cursor-blob"></span>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-left">
+      <a class="nav-brand" href="../index.html">Ghostcode</a>
+      <a class="nav-back" href="../index.html">&#8592; Shank &amp; Enzo</a>
+    </div>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span class="status-label">Case File // Lit Gang</span>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- HERO -->
+    <header class="hero">
+      <img class="hero-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYnrZVT5U25P_e_FVFcdt1lUO_6IjaR3jn7tL6ER1sJg&s=10" alt="" onerror="this.remove()" />
+      <div class="hero-fill" aria-hidden="true"></div>
+      <div class="hero-scanline" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="file-tab">
+          <span class="stamp" id="stamp">CLASSIFIED</span>
+          <span class="file-meta">FILE NO. LG-001 // CLEARANCE: GANG</span>
+        </div>
+        <h1 class="hero-title"><span data-decrypt>The Lit Gang Files</span></h1>
+        <p class="hero-tag">Two friends. One camera. Zero chill. This is the complete record of how group-chat nonsense became sold-out rooms.</p>
+        <div class="hero-metaline" aria-hidden="true">
+          <span><i>Subjects</i> 02</span>
+          <span><i>Status</i> <b class="hot">Still Lit</b></span>
+          <span><i>Threat</i> Maximum Chaos</span>
+          <span><i>Since</i> The Group Chat</span>
+        </div>
+      </div>
+
+      <div class="scroll-cue" id="scrollCue" aria-hidden="true">
+        <span>Open the file</span>
+        <span class="cue-line"></span>
+      </div>
+    </header>
+
+    <!-- THE SUBJECTS -->
+    <section class="subjects section" id="subjects">
+      <div class="section-head" data-reveal>
+        <p class="section-label">// The subjects</p>
+        <h2 class="section-title">Two persons<br />of interest</h2>
+      </div>
+      <div class="dossier-grid">
+        <article class="dossier card-reveal">
+          <span class="card-glow"></span>
+          <span class="card-border"></span>
+          <div class="dossier-photo">
+            <img src="https://www.gistreel.com/wp-content/uploads/2024/12/20241225_103055.jpg" alt="" onerror="this.remove()" />
+            <span class="dossier-fill fill-a"></span>
+            <span class="dossier-code">SUBJECT-01</span>
+          </div>
+          <div class="dossier-body">
+            <h3 class="dossier-name">Shank</h3>
+            <dl class="dossier-stats">
+              <div><dt>Alias</dt><dd>The Instigator</dd></div>
+              <div><dt>Specialty</dt><dd>Starting it</dd></div>
+              <div><dt>Threat level</dt><dd>Maximum chaos</dd></div>
+              <div><dt>Weakness</dt><dd>His own jokes</dd></div>
+            </dl>
+            <p class="dossier-note">Known to say a sentence so cursed the whole room forgets what was being filmed. Do not hand him the aux.</p>
+          </div>
+        </article>
+
+        <article class="dossier card-reveal">
+          <span class="card-glow"></span>
+          <span class="card-border"></span>
+          <div class="dossier-photo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp6Tr_P5ITEJPlJxeE9C3Oa3BrYFKp5eC3JMzofdtUVA&s=10" alt="" onerror="this.remove()" />
+            <span class="dossier-fill fill-b"></span>
+            <span class="dossier-code">SUBJECT-02</span>
+          </div>
+          <div class="dossier-body">
+            <h3 class="dossier-name">Enzo</h3>
+            <dl class="dossier-stats">
+              <div><dt>Alias</dt><dd>The Closer</dd></div>
+              <div><dt>Specialty</dt><dd>Finishing it</dd></div>
+              <div><dt>Threat level</dt><dd>Maximum chaos</dd></div>
+              <div><dt>Weakness</dt><dd>Cannot keep a straight face</dd></div>
+            </dl>
+            <p class="dossier-note">Delivers the line that turns a clip into a movement, then acts like he doesn't know what he did. He knows.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline section" id="timeline">
+      <div class="section-head" data-reveal>
+        <p class="section-label">// The timeline</p>
+        <h2 class="section-title">How the fire<br />actually spread</h2>
+      </div>
+      <div class="tl-wrap" id="tlWrap">
+        <div class="tl-line"><span class="tl-fill" id="tlFill"></span></div>
+        <ol class="tl-list">
+          <li class="tl-item" data-reveal><span class="tl-node"></span><span class="tl-time">00:00</span><div class="tl-card"><h3>The Group Chat</h3><p>A message so unserious it demanded a wider audience. Screen recording started. Nothing was the same.</p></div></li>
+          <li class="tl-item" data-reveal><span class="tl-node"></span><span class="tl-time">EP.01</span><div class="tl-card"><h3>First Stream</h3><p>Eleven viewers. Nine were relatives. Two strangers stayed for the entire thing and told everyone they knew.</p></div></li>
+          <li class="tl-item" data-reveal><span class="tl-node"></span><span class="tl-time">CLIP</span><div class="tl-card"><h3>The Clip That Broke Containment</h3><p>Thirty-one seconds escaped the timeline and refused to be re-contained. Duets multiplied. The algorithm blinked first.</p></div></li>
+          <li class="tl-item" data-reveal><span class="tl-node"></span><span class="tl-time">PHRASE</span><div class="tl-card"><h3>"No chill" Enters Circulation</h3><p>Said once, absentmindedly. Now printed on things. Legal is aware. Legal is also a fan.</p></div></li>
+          <li class="tl-item" data-reveal><span class="tl-node"></span><span class="tl-time">SOLD OUT</span><div class="tl-card"><h3>First Sold-Out Room</h3><p>A venue that expected a modest turnout instead witnessed a congregation. The fire code was tested. The vibes were not.</p></div></li>
+          <li class="tl-item" data-reveal><span class="tl-node"></span><span class="tl-time">NOW</span><div class="tl-card"><h3>Present Day</h3><p>Same two friends. Same one camera. Considerably less chill. The file remains open indefinitely.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="kinetic" aria-hidden="true">
+      <div class="strip strip-a"><div class="strip-track" data-marquee="a"></div></div>
+      <div class="strip strip-b"><div class="strip-track" data-marquee="b"></div></div>
+    </div>
+
+    <!-- CATCHPHRASES -->
+    <section class="phrases section" id="phrases">
+      <div class="section-head" data-reveal>
+        <p class="section-label">// Recovered transmissions</p>
+        <h2 class="section-title">The catchphrases,<br />entered into evidence</h2>
+      </div>
+      <div class="phrase-grid">
+        <blockquote class="phrase big card-reveal"><span class="card-glow"></span>No filter. No script. No chill.</blockquote>
+        <blockquote class="phrase card-reveal"><span class="card-glow"></span>That's not a plan, that's a dare.</blockquote>
+        <blockquote class="phrase card-reveal"><span class="card-glow"></span>We move. We do not explain.</blockquote>
+        <blockquote class="phrase card-reveal"><span class="card-glow"></span>It's giving Tuesday and we respect that.</blockquote>
+        <blockquote class="phrase wide card-reveal"><span class="card-glow"></span>Say less. Then somehow say more.</blockquote>
+        <blockquote class="phrase card-reveal"><span class="card-glow"></span>Certified. Lit. Filed.</blockquote>
+      </div>
+    </section>
+
+    <!-- EVIDENCE / CLIPS -->
+    <section class="evidence section" id="evidence">
+      <div class="section-head" data-reveal>
+        <p class="section-label">// The evidence</p>
+        <h2 class="section-title">Greatest hits,<br />bagged and tagged</h2>
+      </div>
+      <div class="clip-grid">
+        <a class="clip card-reveal" href="#top">
+          <span class="card-glow"></span>
+          <div class="clip-media"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAw7SKH3XrCknl-r9mNILh744IQnlwWQoGXbIBtijzxA&s=10" alt="" onerror="this.remove()" /><span class="clip-fill fill-a"></span><span class="clip-dur">0:31</span><span class="clip-play"></span></div>
+          <div class="clip-body"><p class="clip-tag">EXHIBIT A</p><h3>The Containment Breach</h3><p class="clip-views">4.2M views · 0 regrets</p></div>
+        </a>
+        <a class="clip card-reveal" href="#top">
+          <span class="card-glow"></span>
+          <div class="clip-media"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaQD89ZcqFzzE4vt710bFzosB_cpPMt8XyL2ygBlGwHw&s=10" alt="" onerror="this.remove()" /><span class="clip-fill fill-b"></span><span class="clip-dur">1:12</span><span class="clip-play"></span></div>
+          <div class="clip-body"><p class="clip-tag">EXHIBIT B</p><h3>The Aux Incident</h3><p class="clip-views">2.8M views · 1 apology</p></div>
+        </a>
+        <a class="clip card-reveal" href="#top">
+          <span class="card-glow"></span>
+          <div class="clip-media"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9ztdf2OnoJ7TNHDcLad1rZb8mE0q0xOCVW8nqa6wOrQ&s=10" alt="" onerror="this.remove()" /><span class="clip-fill fill-c"></span><span class="clip-dur">0:44</span><span class="clip-play"></span></div>
+          <div class="clip-body"><p class="clip-tag">EXHIBIT C</p><h3>Straight-Face Challenge (Failed)</h3><p class="clip-views">3.6M views · 0 straight faces</p></div>
+        </a>
+        <a class="clip card-reveal" href="#top">
+          <span class="card-glow"></span>
+          <div class="clip-media"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4IyRr-dnoOM8b0vOuF7jCzy2DK0T6K537j2HxEGKLYw&s=10" alt="" onerror="this.remove()" /><span class="clip-fill fill-d"></span><span class="clip-dur">2:03</span><span class="clip-play"></span></div>
+          <div class="clip-body"><p class="clip-tag">EXHIBIT D</p><h3>The Sold-Out Night</h3><p class="clip-views">5.1M views · 1 tested fire code</p></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- NUMBERS -->
+    <section class="numbers section" id="numbers">
+      <div class="section-head" data-reveal>
+        <p class="section-label">// Case statistics</p>
+        <h2 class="section-title">The paperwork<br />checks out</h2>
+      </div>
+      <div class="stat-grid">
+        <div class="stat" data-reveal><span class="stat-num" data-count="428" data-suffix="+">0</span><span class="stat-label">Streams logged</span></div>
+        <div class="stat" data-reveal><span class="stat-num" data-count="9600" data-suffix="+">0</span><span class="stat-label">Hours live</span></div>
+        <div class="stat" data-reveal><span class="stat-num" data-count="37">0</span><span class="stat-label">Cities visited</span></div>
+        <div class="stat" data-reveal><span class="stat-num" data-count="0">0</span><span class="stat-label">Chill detected</span></div>
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto section" data-reveal>
+      <p class="manifesto-text">The file will never<br />be closed. <span class="hot">Some fires</span><br />are meant to spread.</p>
+    </section>
+
+    <!-- CASE STATUS CTA -->
+    <section class="status-cta section" data-reveal>
+      <div class="status-panel">
+        <span class="status-stamp">STATUS</span>
+        <h2 class="status-headline">Still <span class="hot">Lit.</span></h2>
+        <p class="status-sub">The record is live and updating. Follow the subjects. Witness the chaos in real time.</p>
+        <a class="status-btn" href="../index.html">Return to the source &#8594;</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Ghostcode — 2026</span>
+    <a class="footer-back" href="../index.html">&#8592; Back to Shank &amp; Enzo</a>
+    <span>Built. Not generated.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
