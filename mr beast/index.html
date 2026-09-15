@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MRBEAST — A Cinematic Tribute</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="vignette"></div>
+<div class="letterbox top"></div>
+<div class="letterbox bottom"></div>
+<div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav class="nav">
+  <div class="nav-mark"><span class="dot"></span>MRBEAST</div>
+  <div class="nav-links">
+    <a href="#manifesto">Story</a>
+    <a href="#stats">Numbers</a>
+    <a href="#crew">Crew</a>
+  </div>
+  <a class="nav-pill" href="#cta">Enter</a>
+</nav>
+
+<!-- HERO (single pin: image dolly -> text dolly, sequenced by scroll) -->
+<section class="hero" id="hero">
+  <div class="hero-sticky">
+    <div class="hero-glow" id="heroGlow"></div>
+    <div class="hero-kicker kicker">A Cinematic Tribute</div>
+    <!-- Layer A: image push-in (first half of scroll) -->
+    <div class="logo-shell" id="logoShellA">
+      <div class="hero-frame" id="heroFrame">
+        <img src="data:image/webp;base64,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" alt="MrBeast" class="hero-img" id="heroImg" />
+      </div>
+    </div>
+    <!-- Layer B: MRBEAST wordmark push-in (second half of scroll) -->
+    <div class="logo-shell" id="logoShellB">
+      <h1 class="hero-logo" id="heroLogo">MRBEAST</h1>
+    </div>
+    <p class="hero-tag">The man who turned generosity into spectacle — and spectacle into a movement.</p>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto" id="manifesto">
+  <div class="wrap">
+    <div class="kicker reveal">The Premise</div>
+    <h2 class="display reveal d1" id="manifestoH">
+      <span class="line"><span>He didn't chase the <span class="em">algorithm</span>.</span></span>
+      <span class="line"><span>He broke it open and rebuilt it in his image.</span></span>
+    </h2>
+    <p class="reveal d2" id="manifestoP">What began as a kid counting to absurd numbers in a bedroom became the largest act of public generosity the internet has ever seen. This is not a channel. It's a production studio, a philanthropy engine, and a cultural force — engineered for one feeling: that anything is possible, and someone might just hand it to you on camera.</p>
+    <div class="meta-row">
+      <div class="m reveal d3"><b>1</b>Concept</div>
+      <div class="m reveal d4"><b>∞</b>Scale</div>
+      <div class="m reveal d5"><b>You</b>Audience</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" id="stats">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="kicker reveal">By The Numbers</div>
+        <h2 class="display reveal d1">Scale beyond reason</h2>
+      </div>
+      <p class="reveal d2">A tribute concept — figures illustrative of the phenomenon, not a verified record.</p>
+    </div>
+    <div class="stat-grid" id="statGrid">
+      <div class="stat reveal d1"><span class="tag">Live</span><div class="num"><span data-count="350">0</span><span class="u">M+</span></div><div class="lbl">Subscribers</div></div>
+      <div class="stat reveal d2"><div class="num"><span data-count="40">0</span><span class="u">B+</span></div><div class="lbl">Lifetime Views</div></div>
+      <div class="stat reveal d3"><div class="num"><span data-count="300">0</span><span class="u">M+</span></div><div class="lbl">Given Away</div></div>
+      <div class="stat reveal d4"><div class="num"><span data-count="1000">0</span><span class="u">+</span></div><div class="lbl">Videos Released</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CREW (horizontal pinned scroll — GSAP + Lenis) -->
+<section class="crew" id="crew">
+  <div class="wrap">
+    <div class="head">
+      <div class="kicker reveal">The Cast</div>
+      <h2 class="display reveal d1">The Crew</h2>
+      <p class="reveal d2">A brotherhood of misfits turned into a content army. Keep scrolling — the cast slides sideways.</p>
+    </div>
+  </div>
+  <div class="crew-wrap" id="crewWrap">
+    <div class="crew-sticky" id="crewSticky">
+      <div class="crew-track" id="crewTrack"></div>
+      <div class="crew-rail"><i id="crewRailFill"></i></div>
+      <div class="crew-hint">Scroll &mdash; sideways dolly</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="crew-outro reveal"><b>End of cast</b> &middot; The machine keeps moving</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="wrap">
+    <div class="kicker reveal">The Final Frame</div>
+    <h2 class="display reveal d1">Make something <span class="em">unmissable</span>.</h2>
+    <p class="reveal d2">This is a fan-made tribute concept exploring cinematic interface design. No affiliation, just admiration for the craft of going bigger than anyone thought was allowed.</p>
+    <div class="btn-row reveal d3">
+      <a class="btn primary" href="#hero">Back to the Top</a>
+      <a class="btn ghost" href="#crew">Meet the Crew</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mark">MRBEAST</div>
+    <div class="meta">Tribute concept &middot; No affiliation &middot; <span class="red">&bull;</span> Crafted in the dark</div>
+  </div>
+</footer>
+
+<!-- SVG defs: bust silhouettes with RED rim -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="figFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1a30"/><stop offset="1" stop-color="#040a18"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4040"/><stop offset="1" stop-color="#b8001a"/>
+    </linearGradient>
+    <symbol id="bust" viewBox="0 0 200 250">
+      <path d="M100,22 C128,22 150,44 150,76 C150,98 136,114 120,121 C124,124 130,128 136,133 C160,144 176,164 184,190 L184,250 L16,250 L16,190 C24,164 40,144 64,133 C70,128 76,124 80,121 C64,114 50,98 50,76 C50,44 72,22 100,22 Z"
+            fill="url(#figFill)" stroke="url(#rim)" stroke-width="1.4" opacity="0.96"/>
+    </symbol>
+    <symbol id="bustB" viewBox="0 0 200 250">
+      <path d="M96,24 C124,24 148,46 148,78 C148,100 132,116 114,122 C120,126 128,130 136,136 C162,148 180,170 188,198 L188,250 L12,250 L12,198 C20,170 38,148 64,136 C72,130 80,126 86,122 C68,116 52,100 52,78 C52,46 76,24 96,24 Z"
+            fill="url(#figFill)" stroke="url(#rim)" stroke-width="1.3" opacity="0.94" transform="translate(2 0)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- GSAP + ScrollTrigger (native scroll — no Lenis, max reliability) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+/* ============================================================
+   CREW DATA + RENDER
+   (real photo links plugged in below; if a link ever breaks,
+    onerror on the <img> falls back to the SVG placeholder so
+    the layout never shows a broken image icon)
+   ============================================================ */
+const BUST='M100,22 C128,22 150,44 150,76 C150,98 136,114 120,121 C124,124 130,128 136,133 C160,144 176,164 184,190 L184,250 L16,250 L16,190 C24,164 40,144 64,133 C70,128 76,124 80,121 C64,114 50,98 50,76 C50,44 72,22 100,22 Z';
+function placeholder(c){
+  const hex=(c.bg.match(/#[0-9a-fA-F]{6}/g)||[]);
+  const bg1=hex[0]||'#0e2547', bg2=hex[1]||'#04101f';
+  const svg=`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500' width='400' height='500'>
+<defs>
+<linearGradient id='bg' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='${bg1}'/><stop offset='1' stop-color='${bg2}'/></linearGradient>
+<linearGradient id='fg' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0d1a30'/><stop offset='1' stop-color='#040a18'/></linearGradient>
+<linearGradient id='rim' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#ff4040'/><stop offset='1' stop-color='#b8001a'/></linearGradient>
+<radialGradient id='halo' cx='0.5' cy='0.32' r='0.62'><stop offset='0' stop-color='#ff1f1f' stop-opacity='0.24'/><stop offset='1' stop-color='#ff1f1f' stop-opacity='0'/></radialGradient>
+</defs>
+<rect width='400' height='500' fill='url(#bg)'/>
+<rect width='400' height='500' fill='url(#halo)'/>
+<text x='200' y='300' font-family='Impact,Arial Black,sans-serif' font-size='300' font-weight='bold' fill='rgba(255,255,255,0.06)' text-anchor='middle' dominant-baseline='middle'>${c.i}</text>
+<g transform='translate(60 70) scale(1.4)'>
+<path d='${BUST}' fill='url(#fg)' stroke='url(#rim)' stroke-width='1.6' opacity='0.97'/>
+</g>
+<rect x='1' y='1' width='398' height='498' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='2'/>
+</svg>`;
+  return 'data:image/svg+xml,'+encodeURIComponent(svg);
+}
+const CREW=[
+  {name:"JIMMY",    role:"Founder & Host",        i:"J", bg:"linear-gradient(160deg,#0e2547 0%,#04101f 100%)", real:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeAW5XaHL1ioGmTwGfWm0WxLHWkxqENZt_Ogj9UvznFm8eBZt8rPt9FJYi&s=10"},
+  {name:"NOLAN",    role:"Co-Host & Producer",    i:"N", bg:"linear-gradient(160deg,#0a2b48 0%,#03101e 100%)", real:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTknqcG2NXnyhlX7xW0aNc-wakMwynaSmgrzxgGtNThnQ&s=10"},
+  {name:"CHRIS",    role:"On-Camera & Producer",  i:"C", bg:"linear-gradient(160deg,#152548 0%,#04101f 100%)", real:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9n-c1FSQ8E1gZuCsr-Rgtt-63HKwT1OAg3JxRKizvgA&s=10"},
+  {name:"CHANDLER", role:"On-Camera Talent",      i:"C", bg:"linear-gradient(160deg,#0b1f3c 0%,#04081a 100%)", real:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3jVTY9wPMb5aTIFqqhv6KzaBj7huoVqLrSmLkI4wpXg&s=10"},
+  {name:"KARL",     role:"On-Camera & Editor",    i:"K", bg:"linear-gradient(160deg,#1a2548 0%,#04101f 100%)", real:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmcKDcDBd3KgDp5F8LMipoukgXCAi9BDBPi5-ky_VjAA&s=10"},
+  {name:"TAREQ",    role:"On-Camera Talent",      i:"T", bg:"linear-gradient(160deg,#0c2240 0%,#04081a 100%)", real:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLA_8019A4mU9l9NySvXBmo-Ty2u17YXwA5IGaJXPGAQ&s=10"}
+];
+CREW.forEach(c=>{ c.img=c.real||placeholder(c); c.fallback=placeholder(c); });
+const track=document.getElementById('crewTrack');
+const railFill=document.getElementById('crewRailFill');
+CREW.forEach((c,idx)=>{
+  const card=document.createElement('article');
+  card.className='crew-card';
+  card.style.setProperty('--card-bg',c.bg);
+  card.innerHTML=`
+    <div class="card-bg"></div>
+    <div class="card-figure"><img src="${c.img}" alt="${c.name} portrait" loading="lazy" decoding="async" style="object-position: top;" onerror="this.onerror=null;this.src='${c.fallback}';" /></div>
+    <div class="card-tint"></div>
+    <div class="card-mono">${c.i}</div>
+    <div class="card-scrim"></div>
+    <div class="scan"></div>
+    <div class="grain-c"></div>
+    <div class="vig"></div>
+    <div class="idx">${String(idx+1).padStart(2,'0')} / ${String(CREW.length).padStart(2,'0')}</div>
+    <div class="red-bar"></div>
+    <div class="name">${c.name}</div>
+    <div class="role">${c.role}</div>`;
+  track.appendChild(card);
+});
+const cards=[...track.children];
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const easeInOutCubic=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const easeOutCubic=t=>1-Math.pow(1-t,3);
+
+const hero=document.getElementById('hero');
+const heroGlow=document.getElementById('heroGlow');
+const logoShellA=document.getElementById('logoShellA');
+const logoShellB=document.getElementById('logoShellB');
+const heroFrame=document.getElementById('heroFrame');
+const heroKicker=document.querySelector('.hero-kicker');
+const heroTag=document.querySelector('.hero-tag');
+const manifestoH=document.getElementById('manifestoH');
+const manifestoP=document.getElementById('manifestoP');
+const statGrid=document.getElementById('statGrid');
+
+/* ============================================================
+   HERO DOLLY — single pin: image (p 0->.52), text (p .48->1)
+   crossfade overlaps .48-.52 for a seamless hand-off
+   ============================================================ */
+function dolly(p,shell,frame,o){
+  if(!shell) return;
+  const grow=easeInOutCubic(p);
+  const scale=lerp(o.scaleA,o.scaleB,grow);
+  const blur=lerp(o.blurA,0,easeOutCubic(clamp(p/o.clearAt,0,1)));
+  const dissolve=clamp((p-o.dissolveAt)/(1-o.dissolveAt),0,1);
+  let opacity=o.fadeIn?clamp(p*9,0,1):1;
+  opacity*=(1-dissolve);
+  const g=Math.sin(clamp(p,0,1)*Math.PI);
+  const gb=(o.glowBase+g*o.glowSpan).toFixed(1);
+  shell.style.transform=`scale(${scale.toFixed(3)})`;
+  shell.style.filter=`blur(${blur.toFixed(2)}px) drop-shadow(0 0 ${gb}px rgba(255,31,31,${g.toFixed(2)})) drop-shadow(0 0 ${(gb*2.2).toFixed(1)}px rgba(230,0,26,${(g*0.5).toFixed(2)}))`;
+  shell.style.opacity=opacity.toFixed(3);
+  if(frame) frame.style.boxShadow=`0 0 ${(50+g*40).toFixed(0)}px rgba(255,31,31,${(0.28+g*0.4).toFixed(2)}), inset 0 1px 0 rgba(255,255,255,.08)`;
+  if(o.letterDissolve) shell.style.letterSpacing=(o.lsStart+dissolve*o.lsSpan).toFixed(4)+'em';
+}
+function update(){
+  if(!prefersReduced && hero){
+    const r=hero.getBoundingClientRect();
+    const total=Math.max(1,hero.offsetHeight-window.innerHeight);
+    const p=clamp(-r.top/total,0,1);
+    /* image push-in over the first half */
+    dolly(clamp(p/0.52,0,1),logoShellA,heroFrame,{
+      scaleA:0.42,scaleB:2.4,blurA:14,clearAt:0.42,dissolveAt:0.62,glowBase:14,glowSpan:44
+    });
+    /* MRBEAST wordmark push-in over the second half */
+    dolly(clamp((p-0.48)/0.52,0,1),logoShellB,null,{
+      scaleA:0.30,scaleB:3.6,blurA:16,clearAt:0.40,dissolveAt:0.64,glowBase:18,glowSpan:60,
+      fadeIn:true,letterDissolve:true,lsStart:0.04,lsSpan:0.28
+    });
+    const kf=clamp(1-p/0.20,0,1);
+    heroKicker.style.opacity=kf; heroTag.style.opacity=kf;
+    heroGlow.style.opacity=clamp(1-p/0.6,0,1);
+  }
+
+  if(manifestoH){
+    const r=manifestoH.getBoundingClientRect();
+    const center=r.top+r.height/2 - window.innerHeight/2;
+    manifestoH.style.transform=`translateY(${(center*0.08).toFixed(1)}px)`;
+  }
+  if(manifestoP){
+    const r=manifestoP.getBoundingClientRect();
+    const center=r.top+r.height/2 - window.innerHeight/2;
+    manifestoP.style.transform=`translateY(${(center*0.05).toFixed(1)}px)`;
+  }
+  if(statGrid){
+    const r=statGrid.getBoundingClientRect();
+    const center=r.top+r.height/2 - window.innerHeight/2;
+    statGrid.style.transform=`translateY(${(center*-0.06).toFixed(1)}px)`;
+  }
+  ticking=false;
+}
+let ticking=false;
+function onScroll(){ if(!ticking){ requestAnimationFrame(update); ticking=true; } }
+
+/* ============================================================
+   GSAP HORIZONTAL CREW  (native scroll — no Lenis, max reliability)
+   ============================================================ */
+let lenis=null;
+function initSmoothAndCrew(){
+  if(prefersReduced){ return; }
+  if(!window.gsap || !window.ScrollTrigger){ return; }
+  gsap.registerPlugin(ScrollTrigger);
+
+  const crewWrap=document.getElementById('crewWrap');
+  const crewSticky=document.getElementById('crewSticky');
+  const trackEl=document.getElementById('crewTrack');
+
+  const getScroll=()=> trackEl.scrollWidth - window.innerWidth;
+
+  /* main horizontal motion: vertical scroll -> X translate (NEGATIVE so the
+     track slides left and later cards come into view from the right) */
+  const horiz=gsap.to(trackEl,{
+    x: ()=> -getScroll(),
+    ease:'none',
+    transformOrigin:'0 0',
+    scrollTrigger:{
+      trigger:crewWrap,
+      start:'top top',
+      end:()=> '+='+getScroll(),
+      scrub:1,
+      pin:crewSticky,
+      anticipatePin:1,
+      invalidateOnRefresh:true,
+      onUpdate:(self)=>{
+        if(railFill) railFill.style.width=(self.progress*100).toFixed(2)+'%';
+      }
+    }
+  });
+
+  /* per-card: figure parallax (moves slower than card) + scale-on-center */
+  cards.forEach((card)=>{
+    const fig=card.querySelector('.card-figure');
+    const mono=card.querySelector('.card-mono');
+    /* figure drifts opposite to track for depth */
+    if(fig){
+      gsap.fromTo(fig,{x:-38},{
+        x:38, ease:'none',
+        scrollTrigger:{trigger:card, containerAnimation:horiz, start:'left right', end:'right left', scrub:true}
+      });
+    }
+    if(mono){
+      gsap.fromTo(mono,{x:-90},{
+        x:90, ease:'none',
+        scrollTrigger:{trigger:card, containerAnimation:horiz, start:'left right', end:'right left', scrub:true}
+      });
+    }
+    /* card lifts + scales as it hits center, recedes after */
+    gsap.fromTo(card,{scale:0.86,y:30,filter:'brightness(0.55) saturate(0.8)'},
+      {scale:1,y:0,filter:'brightness(1) saturate(1)',ease:'none',
+       scrollTrigger:{trigger:card, containerAnimation:horiz, start:'left 80%', end:'center 45%', scrub:true}
+      });
+    gsap.to(card,{scale:0.9,filter:'brightness(0.6) saturate(0.85)',ease:'none',
+      scrollTrigger:{trigger:card, containerAnimation:horiz, start:'center 55%', end:'right 20%', scrub:true}
+     });
+  });
+
+  ScrollTrigger.addEventListener('refresh', onScroll);
+  ScrollTrigger.refresh();
+}
+
+/* ============================================================
+   REVEAL ON SCROLL
+   ============================================================ */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+},{threshold:0.14,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ============================================================
+   COUNT-UP STATS
+   ============================================================ */
+const counted=new WeakSet();
+const countObs=new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting && !counted.has(en.target)){
+      counted.add(en.target);
+      en.target.querySelectorAll('[data-count]').forEach(el=>{
+        const target=+el.dataset.count;
+        const dur=1600; const t0=performance.now();
+        const step=now=>{
+          const t=Math.min(1,(now-t0)/dur);
+          const e=1-Math.pow(1-t,3);
+          const v=target>=1000?Math.round(target*e/10)*10:Math.round(target*e);
+          el.textContent=v.toLocaleString();
+          if(t<1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+    }
+  });
+},{threshold:0.35});
+countObs.observe(statGrid);
+
+/* ============================================================
+   CURSOR GLOW
+   ============================================================ */
+if(!prefersReduced && window.matchMedia('(pointer:fine)').matches){
+  const cg=document.getElementById('cursorGlow');
+  let tx=window.innerWidth/2,ty=window.innerHeight/2;
+  document.body.classList.add('cursor-on');
+  window.addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;cg.style.left=tx+'px';cg.style.top=ty+'px';},{passive:true});
+}
+
+/* ============================================================
+   NAV ANCHORS -> Lenis scrollTo
+   ============================================================ */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href');
+    if(id.length<2) return;
+    const el=document.querySelector(id);
+    if(!el) return;
+    e.preventDefault();
+    if(lenis){ lenis.scrollTo(el,{offset:-20,duration:1.4}); }
+    else { el.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+
+/* ============================================================
+   BOOT
+   ============================================================ */
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('resize',()=>{ requestAnimationFrame(update); if(window.ScrollTrigger) ScrollTrigger.refresh(); });
+update();
+initSmoothAndCrew();
+
+window.addEventListener('load',()=>document.body.classList.add('loaded'));
+</script>
+</body>
+</html>
